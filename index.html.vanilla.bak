@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GLACIER | Natural Mineral Water</title>
+    <meta
+      name="description"
+      content="Subterranean glacial mineral water bottled at the source."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f172a'><path d='M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z'/></svg>"
+    />
+  </head>
+  <body>
+    <!-- =========================================================================
+       FIXED VIEWPORT STAGE (NO PHYSICAL PAGE SCROLL)
+       ========================================================================= -->
+    <div class="fixed-stage-wrap">
+      <!-- Canvas 1: Rock-Still Unzoomed Bottle Animation (Right Side) -->
+      <canvas id="global-canvas"></canvas>
+
+      <!-- Pure Circular Cloud Dome (Deep solid white on left, smooth circular fog feathering to right) -->
+      <div class="circular-cloud-wash"></div>
+    </div>
+
+    <!-- =========================================================================
+       COMPLETELY TRANSPARENT NAVIGATION (BESPOKE EDITORIAL AESTHETIC)
+       ========================================================================= -->
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="#hero" class="nav-brand" data-progress="0.0">
+          <span class="brand-title">GLACIER</span>
+        </a>
+
+        <nav class="nav-links">
+          <button class="nav-link active" data-progress="0.0">Overview</button>
+          <button class="nav-link" data-progress="0.25">Origin</button>
+          <button class="nav-link" data-progress="0.50">Analysis</button>
+          <button class="nav-link" data-progress="0.75">Vessel</button>
+          <button class="nav-link" data-progress="1.00">Allocations</button>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            id="cart-toggle"
+            class="cart-link"
+            aria-label="Open Shopping Bag"
+          >
+            <span>Bag</span>
+            <span id="cart-count" class="cart-counter">[0]</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================================================================
+       IN-PLACE CONTENT CONTAINER (EDITORIAL OPEN LAYOUT : ZERO BOXING/SHADOWS)
+       ========================================================================= -->
+    <div class="in-place-content-stage">
+      <div class="scroll-track" id="scroll-track">
+        <!-- STAGE 0: HERO (TABULATED EDITORIAL OVERVIEW) -->
+        <div class="content-slide active" id="slide-0">
+          <div class="slide-inner">
+            <span class="slide-eyebrow">Pre-Industrial Glacial Water</span>
+            <h1 class="slide-hero-title">GLACIER</h1>
+            <p class="slide-caption">
+              Subterranean ice melt filtered through 50,000 years of prehistoric
+              basalt. Captured at natural sub-zero purity.
+            </p>
+
+            <!-- Editorial Hairline Spec Strip (No Card Boxes, No Shadows) -->
+            <div class="hero-quick-tabulate">
+              <div class="tab-col">
+                <span class="tab-label">Origin Coordinates</span>
+                <span class="tab-val">64.12&deg; N</span>
+                <span class="tab-sub">Sub-glacial aquifer</span>
+              </div>
+              <div class="tab-col">
+                <span class="tab-label">Catchment Elevation</span>
+                <span class="tab-val">1,450 m</span>
+                <span class="tab-sub">Ice shelf catchment</span>
+              </div>
+              <div class="tab-col">
+                <span class="tab-label">Alkaline pH</span>
+                <span class="tab-val highlight-val">7.85 pH</span>
+                <span class="tab-sub">Basalt equilibrium</span>
+              </div>
+              <div class="tab-col">
+                <span class="tab-label">Isotopic Purity</span>
+                <span class="tab-val highlight-val">99.998%</span>
+                <span class="tab-sub">Zero microplastics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 1: SOURCE ORIGIN (EDITORIAL HAIRLINE MATRIX) -->
+        <div class="content-slide" id="slide-1">
+          <div class="slide-inner">
+            <div class="slide-meta-row"></div>
+            <h2 class="slide-title">50,000-Year Glacial Source</h2>
+            <p class="slide-text">
+              Drawn under strict conservation quotas from subterranean aquifers
+              pressurized beneath prehistoric ice shelves.
+            </p>
+
+            <!-- Open Tabulated Matrix (No Card Wrapper, Clean Hairlines) -->
+            <div class="tabulate-wrap">
+              <table class="tabulate-table">
+                <thead>
+                  <tr>
+                    <th style="width: 40%">Hydro Parameter</th>
+                    <th style="width: 25%">Certified Assay</th>
+                    <th style="width: 35%">Geological Mechanism</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="cell-primary">Alkaline Equilibrium</div>
+                      <div class="cell-sub">Subterranean pressure balance</div>
+                    </td>
+                    <td><span class="data-val cyan">7.85 pH</span></td>
+                    <td>Natural basalt ion exchange</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="cell-primary">Total Dissolved Solids</div>
+                      <div class="cell-sub">Featherweight mineral matrix</div>
+                    </td>
+                    <td><span class="data-val">112 mg/L</span></td>
+                    <td>Velvet palatal texture</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="cell-primary">Capture Temperature</div>
+                      <div class="cell-sub">Sub-zero borehole extraction</div>
+                    </td>
+                    <td><span class="data-val">1.4&deg;C</span></td>
+                    <td>Shielded from atmospheric warmth</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="cell-primary">Anthropogenic Purity</div>
+                      <div class="cell-sub">
+                        Nitrates, nitrites &amp; microplastics
+                      </div>
+                    </td>
+                    <td><span class="data-val pure">0.000 Undetected</span></td>
+                    <td>Pre-industrial late Pleistocene origin</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 2: MINERAL COMPOSITION (EDITORIAL HAIRLINE MATRIX) -->
+        <div class="content-slide" id="slide-2">
+          <div class="slide-inner">
+            <div class="slide-meta-row"></div>
+            <h2 class="slide-title">Bio-Available Electrolytes</h2>
+            <p class="slide-text">
+              Naturally enriched through miles of subterranean volcanic basalt
+              for cellular hydration and systemic conductivity.
+            </p>
+
+            <div class="tabulate-wrap">
+              <table class="tabulate-table">
+                <thead>
+                  <tr>
+                    <th style="width: 40%">Bio-Active Element</th>
+                    <th style="width: 25%">Concentration</th>
+                    <th style="width: 35%">Physiological Role</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="cell-primary">
+                        Bio-Active Silica (SiO&sub2;)
+                      </div>
+                      <div class="cell-sub">Volcanic quartz dissolution</div>
+                    </td>
+                    <td><span class="data-val cyan">42.4 mg/L</span></td>
+                    <td>Collagen synthesis &amp; cellular resilience</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="cell-primary">Calcium (Ca&sup2;&plus;)</div>
+                      <div class="cell-sub">
+                        Prehistoric calcite dissolution
+                      </div>
+                    </td>
+                    <td><span class="data-val">18.2 mg/L</span></td>
+                    <td>Neuro-muscular conductivity</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="cell-primary">Magnesium (Mg&sup2;&plus;)</div>
+                      <div class="cell-sub">Dolomite strata filtration</div>
+                    </td>
+                    <td><span class="data-val gold">8.6 mg/L (2:1)</span></td>
+                    <td>Cardiovascular electrolyte balance</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="cell-primary">
+                        Bicarbonates (HCO&sub3;&minus;)
+                      </div>
+                      <div class="cell-sub">Natural metabolic buffer</div>
+                    </td>
+                    <td><span class="data-val">68.0 mg/L</span></td>
+                    <td>Maintains systemic alkalinity</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 3: THE VESSEL (EDITORIAL HAIRLINE MATRIX) -->
+        <div class="content-slide" id="slide-3">
+          <div class="slide-inner">
+            <div class="slide-meta-row"></div>
+            <h2 class="slide-title">Artisanal Flint Glass</h2>
+            <p class="slide-text">
+              Engineered from heavy Nordic flint glass to preserve sub-zero
+              freshness without chemical leaching or micro-fissuring.
+            </p>
+
+            <div class="tabulate-wrap">
+              <table class="tabulate-table">
+                <thead>
+                  <tr>
+                    <th style="width: 40%">Vessel Specification</th>
+                    <th style="width: 25%">Material Matrix</th>
+                    <th style="width: 35%">Purity Guarantee</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="cell-primary">Vessel Architecture</div>
+                      <div class="cell-sub">Cold-press flint glass mold</div>
+                    </td>
+                    <td><span class="data-val">Nordic Flint Glass</span></td>
+                    <td>100% Infinitely recyclable &bull; Chemically inert</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="cell-primary">Hermetic Seal</div>
+                      <div class="cell-sub">
+                        Precision-machined crown closure
+                      </div>
+                    </td>
+                    <td><span class="data-val">Aerospace Aluminum</span></td>
+                    <td>Hermetic airtight sub-zero lock</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="cell-primary">Chemical Leaching Assays</div>
+                      <div class="cell-sub">Endocrine disrupter testing</div>
+                    </td>
+                    <td>
+                      <span class="data-val pure">0.0 ppm Antimony/BPA</span>
+                    </td>
+                    <td>Certified food contact safety standard</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="cell-primary">Optical Faceting</div>
+                      <div class="cell-sub">
+                        Glacial crevasse refractive cuts
+                      </div>
+                    </td>
+                    <td><span class="data-val cyan">Ice-Prism Cut</span></td>
+                    <td>Shields dissolved minerals from UV decay</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 4: ALLOCATIONS / CELLAR (EDITORIAL ORDER MATRIX) -->
+        <div class="content-slide" id="slide-4">
+          <div class="slide-inner">
+            <div class="slide-meta-row"></div>
+            <h2 class="slide-title">Select Allocation</h2>
+            <p class="slide-text">
+              Best served chilled at &minus;1&deg;C over clear glacial ice.
+              Select your allocation for insulated courier dispatch:
+            </p>
+
+            <div class="tabulate-wrap">
+              <table class="tabulate-table order-table">
+                <thead>
+                  <tr>
+                    <th style="width: 36%">Expression</th>
+                    <th style="width: 28%">Format Spec</th>
+                    <th style="width: 16%">Allocation</th>
+                    <th style="width: 20%; text-align: right">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="cell-primary">Still Reserve</div>
+                      <div class="cell-sub">Natural artesian capture</div>
+                    </td>
+                    <td>
+                      <span class="spec-note">6 &times; 750ml Flint</span>
+                    </td>
+                    <td><strong class="price-strong">$48</strong></td>
+                    <td style="text-align: right">
+                      <button
+                        class="reserve-btn add-mini-btn"
+                        data-id="glacier-still"
+                        data-name="Glacier Still Reserve"
+                        data-price="48"
+                        data-img="assets/zip_frames/0004.png"
+                      >
+                        Reserve
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="cell-primary">Effervescent</div>
+                      <div class="cell-sub">Micro-carbonated fine bead</div>
+                    </td>
+                    <td>
+                      <span class="spec-note">6 &times; 750ml Carbonated</span>
+                    </td>
+                    <td><strong class="price-strong">$56</strong></td>
+                    <td style="text-align: right">
+                      <button
+                        class="reserve-btn add-mini-btn"
+                        data-id="glacier-sparkling"
+                        data-name="Glacier Effervescent"
+                        data-price="56"
+                        data-img="assets/zip_frames/0001.png"
+                      >
+                        Reserve
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="cell-primary">The Tasting Suite</div>
+                      <div class="cell-sub">
+                        12 Btls + 2 Mouthblown Tumblers
+                      </div>
+                    </td>
+                    <td><span class="spec-note">Cellar Edition</span></td>
+                    <td><strong class="price-strong">$120</strong></td>
+                    <td style="text-align: right">
+                      <button
+                        class="reserve-btn add-mini-btn"
+                        data-id="glacier-suite"
+                        data-name="The Tasting Suite"
+                        data-price="120"
+                        data-img="assets/zip_frames/0008.png"
+                      >
+                        Reserve
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide-out Shopping Bag Drawer -->
+    <aside id="cart-drawer" class="cart-drawer">
+      <div class="cart-backdrop" id="cart-backdrop"></div>
+      <div class="cart-panel">
+        <div class="cart-header">
+          <h3 class="cart-heading">Your Selection</h3>
+          <button id="cart-close" class="close-btn" aria-label="Close Bag">
+            &times;
+          </button>
+        </div>
+
+        <div class="cart-items" id="cart-items">
+          <p class="empty-text">Your bag is currently empty.</p>
+        </div>
+
+        <div class="cart-footer">
+          <div class="cart-total-row">
+            <span>Subtotal</span>
+            <span id="cart-total-val">$0</span>
+          </div>
+          <p class="shipping-note">
+            Complimentary temperature-controlled courier delivery.
+          </p>
+          <button id="checkout-btn" class="checkout-btn">
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Script -->
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+*.zip
+*.mp4
+*.bak
+dist/assets/screenshots/
+.DS_Store
